@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at center, #1a0508 0%, #0a0a0a 80%);
+}
+
+.registration-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-logo {
+    height: 100px;
+    width: auto;
+    margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.form-logo:hover {
+    opacity: 0.8;
+}
+
+.form-card {
+    background: #111;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #ff003c; 
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.15); 
+}
+
+.form-card h2 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.form-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #ff003c; 
+    font-weight: bold;
+}
+
+.input-group input {
+    background-color: #050505;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.input-group input::placeholder {
+    color: #444;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff003c;
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
+    background-color: #000;
+}
+
+.email-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.cta-button {
+    width: 100%;
+    display: block;
+    padding: 15px;
+    margin-top: 15px;
+    border: 2px solid #ff003c;
+    color: #ff003c;
+    background-color: transparent;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff003c;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 30px 20px;
+    }
+}
