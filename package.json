@@ -1,0 +1,25 @@
+{
+  "name": "onationform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanieleSandre/ONationForm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DanieleSandre/ONationForm/issues"
+  },
+  "homepage": "https://github.com/DanieleSandre/ONationForm#readme",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1"
+  }
+}
