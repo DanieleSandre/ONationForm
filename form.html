@@ -9,9 +9,7 @@
 <body>
 
     <div class="registration-wrapper">
-        <a href="index.html">
-            <img src="logobianco_verticale.png" alt="ØNation Logo" class="form-logo">
-        </a>
+        <img src="logobianco_verticale.png" alt="ØNation Logo" class="form-logo">
         
         <div class="form-card">
             <h2>GUEST LIST</h2>
@@ -36,42 +34,47 @@
                 </div>
                 
                 <button type="submit" class="cta-button">REGISTRATI ORA</button>
-                
+
             </form>
+
+            <div id="form-message" class="form-message"></div>
         </div>
     </div>
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxu19RdCbmS9PAVGabcuAXjKUFniEKUFEb0U5XfIXxLih68fmdnXuLGvqUSCLw2v-eQtw/exec';
     const form = document.getElementById('onation-form');
+    const msgBox = document.getElementById('form-message');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        
+
         const btn = form.querySelector('button');
-        const originalText = btn.innerText;
         btn.innerText = "INVIO IN CORSO...";
         btn.disabled = true;
+        msgBox.className = 'form-message';
+        msgBox.textContent = '';
 
-        const formData = {
-            nome: form.nome.value,
-            cognome: form.cognome.value,
-            email: form.email.value
-        };
-
-        fetch(scriptURL, { 
-            method: 'POST', 
-            body: JSON.stringify(formData)
+        fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify({
+                nome: form.nome.value,
+                cognome: form.cognome.value,
+                email: form.email.value
+            })
         })
         .then(response => {
-            alert('Registrazione completata! Controlla la tua email.');
-            btn.innerText = originalText;
-            btn.disabled = false;
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            msgBox.className = 'form-message success';
+            msgBox.textContent = 'Registrazione completata! Controlla la tua email.';
             form.reset();
         })
         .catch(error => {
             console.error('Errore!', error.message);
-            alert('Si è verificato un errore. Riprova.');
-            btn.innerText = originalText;
+            msgBox.className = 'form-message error';
+            msgBox.textContent = 'Si è verificato un errore. Riprova più tardi.';
+        })
+        .finally(() => {
+            btn.innerText = "REGISTRATI ORA";
             btn.disabled = false;
         });
     });
