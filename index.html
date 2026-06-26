@@ -10,7 +10,31 @@
 
     <div class="registration-wrapper">
         <img src="logobianco_verticale.png" alt="ØNation Logo" class="form-logo">
-        <p class="event-title">Pool Party 19/07/2026<br>Dalle 14:00 alle 22:30</p>
+        <p class="event-title">Pool Party 19/07/2026<br>Dalle 14:00 alle 22:30
+        </p>
+
+        <div class="countdown" id="countdown" role="timer">
+            <p class="countdown-label">Alla chiusura della lista</p>
+            <div class="countdown-timer">
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-days">00</span>
+                    <span class="countdown-text">Giorni</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-hours">00</span>
+                    <span class="countdown-text">Ore</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-minutes">00</span>
+                    <span class="countdown-text">Minuti</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-number" id="cd-seconds">00</span>
+                    <span class="countdown-text">Secondi</span>
+                </div>
+            </div>
+            <p class="countdown-closed" id="countdown-closed">Lista chiusa</p>
+        </div>
 
         <div class="form-card">
             <h2>GUEST LIST</h2>
@@ -79,6 +103,45 @@
             btn.disabled = false;
         });
     });
+</script>
+
+<script>
+    // Mezzanotte tra il 18 e il 19 luglio 2026, ora italiana (CEST, UTC+2).
+    const countdownTarget = new Date('2026-07-19T00:00:00+02:00').getTime();
+
+    const cd = {
+        days: document.getElementById('cd-days'),
+        hours: document.getElementById('cd-hours'),
+        minutes: document.getElementById('cd-minutes'),
+        seconds: document.getElementById('cd-seconds')
+    };
+    const countdownEl = document.getElementById('countdown');
+
+    const pad = n => String(n).padStart(2, '0');
+
+    let countdownInterval;
+
+    function updateCountdown() {
+        const diff = countdownTarget - Date.now();
+
+        if (diff <= 0) {
+            cd.days.textContent = '00';
+            cd.hours.textContent = '00';
+            cd.minutes.textContent = '00';
+            cd.seconds.textContent = '00';
+            countdownEl.classList.add('is-closed');
+            if (countdownInterval) clearInterval(countdownInterval);
+            return;
+        }
+
+        cd.days.textContent = pad(Math.floor(diff / 86400000));
+        cd.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+        cd.minutes.textContent = pad(Math.floor((diff % 3600000) / 60000));
+        cd.seconds.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
 </script>
 
 </body>
