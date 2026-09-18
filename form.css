@@ -1,4 +1,4 @@
-* {
+/* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,91 +27,13 @@ body {
 .form-logo {
     height: 100px;
     width: auto;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
 }
 
-.event-title {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #ff003c;
-    margin-bottom: 30px;
-    text-shadow: 0 0 12px rgba(255, 0, 60, 0.4);
-}
-
 .form-logo:hover {
     opacity: 0.8;
-}
-
-.countdown {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.countdown-label {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 12px;
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.countdown-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #111;
-    border: 1px solid #ff003c;
-    border-radius: 8px;
-    padding: 10px 0;
-    min-width: 64px;
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
-}
-
-.countdown-number {
-    font-size: 26px;
-    font-weight: bold;
-    line-height: 1;
-    color: #ff003c;
-    text-shadow: 0 0 12px rgba(255, 0, 60, 0.4);
-    font-variant-numeric: tabular-nums;
-}
-
-.countdown-text {
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #888;
-    margin-top: 6px;
-}
-
-.countdown-closed {
-    display: none;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #ff003c;
-    text-shadow: 0 0 12px rgba(255, 0, 60, 0.4);
-}
-
-.countdown.is-closed .countdown-timer {
-    display: none;
-}
-
-.countdown.is-closed .countdown-closed {
-    display: block;
 }
 
 .form-card {
@@ -206,45 +128,195 @@ body {
     box-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
 }
 
-.form-message {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
+@media (max-width: 480px) {
+    .form-card {
+        padding: 30px 20px;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BLOCK*/
+/* form.css */
+
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Carattere tecnico e geometrico che richiama il poster */
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Sfondo scuro e profondo */
+    background-color: #000000; 
+    /* Inserisci qui l'immagine della struttura geometrica brutalista come sfondo */
+    background-image: url('percorso/tua/immagine/struttura_geometrica.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.registration-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-logo {
+    /* Logo verticale bianco, pulito */
+    height: 120px; 
+    width: auto;
+    margin-bottom: 20px; 
+}
+
+.form-card {
+    /* Card scura, quasi fusa con lo sfondo, con un leggero bagliore */
+    background: rgba(10, 10, 10, 0.9); 
+    width: 100%;
+    padding: 40px;
+    border-radius: 4px; /* Angoli meno smussati, più netti */
+    /* Rimosso il bordo rosso, aggiunto un bagliore bianco sottile */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.form-card h2 {
+    /* "GUEST LIST" - Carattere bold, allungato e maiuscolo come "BLOCK" */
+    font-size: 32px;
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
     text-align: center;
-    font-size: 13px;
+    margin-bottom: 10px;
+    color: #fff;
+    /* Linea bianca sottile sopra il titolo, come nel poster */
+    border-top: 1px solid #fff;
+    padding-top: 15px; 
+}
+
+.form-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa; /* Grigio chiaro per il sottotitolo */
+    margin-bottom: 35px;
     letter-spacing: 0.5px;
 }
 
-.form-message.success {
-    display: block;
-    background-color: rgba(0, 200, 80, 0.08);
-    border: 1px solid #00c850;
-    color: #00c850;
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
-.form-message.error {
+.input-group label {
+    /* Etichette - Maiuscole, spaziatura ampia, carattere tecnico (come i DJ) */
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #fff; /* Bianco per le etichette, non più rosso */
+    font-weight: bold;
+}
+
+.input-group input {
+    /* Input - Sfondo scuro, bordo sottile, testo bianco */
+    background-color: #050505;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 2px; /* Angoli netti */
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.input-group input::placeholder {
+    color: #555; /* Placeholder più scuro */
+}
+
+.input-group input:focus {
+    outline: none;
+    /* Bordo bianco luminoso al focus */
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    background-color: #000;
+}
+
+.email-note {
+    font-size: 11px;
+    color: #777; /* Grigio scuro per la nota */
+    margin-top: 6px;
+}
+
+.cta-button {
+    /* Pulsante - Bordo bianco, testo bianco, sfondo trasparente */
+    width: 100%;
     display: block;
-    background-color: rgba(255, 0, 60, 0.08);
-    border: 1px solid #ff003c;
-    color: #ff003c;
+    padding: 16px;
+    margin-top: 20px;
+    border: 1px solid #fff; 
+    color: #fff;
+    background-color: transparent;
+    /* Carattere bold, spaziatura ampia, pulito */
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px; /* Angoli netti */
+    transition: all 0.4s ease;
+}
+
+.cta-button:hover {
+    /* Hover - Inversione: sfondo bianco, testo nero, bagliore intenso */
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Piè di pagina tecnico, come nel poster */
+.registration-wrapper::after {
+    content: "TECHNO // HARDGROOVE    |    STAY INTO THE BLOCK";
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 480px) {
     .form-card {
         padding: 30px 20px;
     }
-
-    .countdown-timer {
-        gap: 8px;
-    }
-
-    .countdown-unit {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .countdown-number {
-        font-size: 22px;
+    .form-card h2 {
+        font-size: 26px;
     }
 }
