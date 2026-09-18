@@ -311,6 +311,20 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+/* Stile per la data e l'ora sopra il form */
+.event-title {
+    text-align: center;        
+    font-size: 18px;           
+    font-weight: 900;          
+    letter-spacing: 2px;        
+    text-transform: uppercase;  
+    color: #cccccc;           
+    margin-bottom: 25px;       
+    line-height: 1.5;          
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;      
+    width: 100%;               
+}
 
 @media (max-width: 480px) {
     .form-card {
