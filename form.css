@@ -333,4 +333,10 @@ body {
     .form-card h2 {
         font-size: 26px;
     }
+
+    .event-title {
+        font-size: 13px;         
+        letter-spacing: 1px;     
+        white-space: nowrap;     
+    }
 }
